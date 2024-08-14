@@ -1,6 +1,42 @@
-id=hosts
-name=Systemless hosts
-version=1.0
+id=module_id
+name=模块名称
+version=v1.0
 versionCode=1
-author=Webpage
-description=Systemless hosts for Ksu
+author=作者
+description=模块描述，单行
+updateJson=https://raw.githubusercontent.com/user/repository/branch/update.json
+
+↑module.prop 示例
+
+```module.prop
+id=<string>
+name=<string>
+version=<string>
+versionCode=<int>
+author=<string>
+description=<string>
+updateJson=<url>
+```
+↑module.prop 格式
+
+module.prop 存储模块元数据供管理器读取，id 应该是唯一的，须匹配正则表达式 `^[a-zA-Z][a-zA-Z0-9._-]+$`，建议采取下划线命名法，updateJson 为可选项
+
+```JSON
+{
+    "version": v1.1
+    "versionCode": 2,
+    "zipUrl": https://github.com/user/repository/releases/download/tag/module-v1.1-release.zip
+    "changelog": https://raw.githubusercontent.com/user/repository/branch/changelog.md
+}
+```
+↑update.json 示例
+
+```JSON
+{
+    "version": string,
+    "versionCode": int,
+    "zipUrl": url,
+    "changelog": url
+}
+```
+↑update.json 格式
