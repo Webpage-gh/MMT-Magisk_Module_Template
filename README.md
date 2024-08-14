@@ -15,15 +15,19 @@ APatch: `ASH_STANDALONE=1 /data/adb/ap/bin/busybox sh <sh脚本>`
 其中 <sh脚本> 为可选项，不填写时会打开一个 Shell。
 
 ## 有用的变量
+```
 REPLACE="
 /system/app/YouTube
 /system/app/Bloatware
 "
+```
 启用模块时，将会把 `/system/app/YouTube` 和 `/system/app/Bloatware` 替换为空目录。禁用模块后重启恢复。
+```
 REMOVE="
 /system/app/YouTube
 /system/app/Bloatware
 "
+```
 **KernelSU 和 APatch 特有功能**，将会把 `/system/app/YouTube` 和 `/system/app/Bloatware` 删除。禁用模块后重启恢复。
 
 ## 通用变量
