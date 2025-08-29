@@ -1,3 +1,5 @@
+该仓库已存档，因为我认为不再需要维护了。如果有issue、pr、取消存档的请求，[请到issue仓库](https://github.com/Webpage-gh/issues/issues/new)
+
 ## Magisk_Module_Template
 
 ## 用法: [点此下载模板](https://github.com/Webpage-gh/MMT-Magisk_Module_Template/archive/refs/heads/main.zip)
