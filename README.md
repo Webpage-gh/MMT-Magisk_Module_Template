@@ -1,9 +1,10 @@
-该仓库已存档，因为我认为不再需要维护了。如果有issue、pr、取消存档的请求，[请到issue仓库](https://github.com/Webpage-gh/issues/issues/new)
-
 ## Magisk_Module_Template
 
+## 介绍
+本仓库收集了常用命令、函数和脚本名称，以及一条模拟脚本执行环境的命令，供开发者备忘查找。如果没有您需要的，请从[Magisk 开发者指南（英文）](https://topjohnwu.github.io/Magisk/guides.html)、[APatch 的 APM 开发指南](https://apatch.dev/zh_CN/apm-guide.html)或[KernelSU 模块开发指南](https://kernelsu.org/zh_CN/guide/module.html)查找所需内容。欢迎PR和issue。
+
 ## 用法: [点此下载模板](https://github.com/Webpage-gh/MMT-Magisk_Module_Template/archive/refs/heads/main.zip)
-下载完成后解压到当前目录，根据每个sh文件中的提示进行编写，编写完成后压缩即可。这些是在customize.sh中的提示：
+下载完成后解压到当前目录，根据每个sh文件中的提示进行编写，编写完成后压缩即可。
 
 ## 调试代码
 Root 管理器会内置一个 busybox，避免手机厂商的改动影响代码，让脚本始终在可预测的环境中执行。要模拟这个环境，请在终端中执行以下命令（建议复制粘贴避免出错）
@@ -15,6 +16,17 @@ Magisk: `ASH_STANDALONE=1 /data/adb/magisk/busybox sh <sh脚本>`
 KernelSU: `ASH_STANDALONE=1 /data/adb/ksu/bin/busybox sh <sh脚本>`
 APatch: `ASH_STANDALONE=1 /data/adb/ap/bin/busybox sh <sh脚本>`
 其中 <sh脚本> 为可选项，不填写时会打开一个 Shell。
+
+## 有用的命令
+在service.sh中等待开机完成：`resetprop -w sys.boot_completed 0`，仍推荐在`service.sh`末尾使用此命令，防止无法适配Magisk，而不是使用`boot-completed.sh`
+
+## 脚本
+安装脚本：`customize.sh`  
+启动脚本：
+- post-fs-data.sh
+- post-mount.sh（Magisk不支持）
+- service.sh
+- boot-completed.sh（Magisk不支持）
 
 ## 有用的变量
 ```
