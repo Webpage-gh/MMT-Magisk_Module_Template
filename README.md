@@ -23,10 +23,10 @@ APatch: `ASH_STANDALONE=1 /data/adb/ap/bin/busybox sh <sh脚本>`
 ## 脚本
 安装脚本：`customize.sh`  
 启动脚本：
-- post-fs-data.sh
-- post-mount.sh（Magisk不支持）
-- service.sh
-- boot-completed.sh（Magisk不支持）
+- `post-fs-data.sh`
+- `post-mount.sh`（Magisk不支持）
+- `service.sh`
+- `boot-completed.sh`（Magisk不支持）
 
 ## 有用的变量
 ```
